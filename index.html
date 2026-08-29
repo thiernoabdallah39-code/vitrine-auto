@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vitrine automobile - Découvrez notre collection de véhicules d'exception">
+    <title>AutoVitrine — Collection Premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============ HEADER / NAVIGATION ============ -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">AutoVitrine</a>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="#accueil" class="nav__link">Accueil</a></li>
+                <li><a href="#collection" class="nav__link">Collection</a></li>
+                <li><a href="#apropos" class="nav__link">À propos</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            
+            <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ============ HERO / ACCUEIL ============ -->
+    <section class="hero" id="accueil">
+        <div class="container hero__content">
+            <h1 class="hero__title">
+                L'automobile <span class="hero__highlight">réinventée</span>
+            </h1>
+            <p class="hero__subtitle">
+                Découvrez une collection soigneusement sélectionnée de véhicules d'exception, 
+                alliant performance, élégance et innovation.
+            </p>
+            <div class="hero__buttons">
+                <a href="#collection" class="btn btn--primary">Voir la collection</a>
+                <a href="#contact" class="btn btn--secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COLLECTION DE VOITURES ============ -->
+    <section class="collection" id="collection">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Notre Collection</h2>
+                <p class="section__subtitle">Des véhicules choisis pour leur caractère unique</p>
+            </div>
+            
+            <!-- Filtres -->
+            <div class="filters">
+                <button class="filter-btn filter-btn--active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="sport">Sport</button>
+                <button class="filter-btn" data-filter="berline">Berline</button>
+                <button class="filter-btn" data-filter="suv">SUV</button>
+                <button class="filter-btn" data-filter="electrique">Électrique</button>
+            </div>
+
+            <!-- Grille de voitures -->
+            <div class="cars-grid">
+                
+                <!-- VOITURE 1 - Duplique ce bloc pour ajouter d'autres voitures -->
+                <article class="car-card" data-category="sport">
+                    <div class="car-card__image">
+                        <img src="images/voiture-1.jpg" alt="Voiture Sport 1" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Voiture+Sport'">
+                        <span class="car-card__badge">Sport</span>
+                    </div>
+                    <div class="car-card__body">
+                        <h3 class="car-card__title">Modèle Sport Racing</h3>
+                        <p class="car-card__desc">Une machine d'exception alliant puissance et précision.</p>
+                        <div class="car-card__specs">
+                            <span>🏁 320 km/h</span>
+                            <span>⚡ 0-100 en 3.2s</span>
+                            <span>🔧 500 ch</span>
+                        </div>
+                        <div class="car-card__footer">
+                            <span class="car-card__price">85 000 €</span>
+                            <button class="btn btn--small">Détails</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VOITURE 2 -->
+                <article class="car-card" data-category="berline">
+                    <div class="car-card__image">
+                        <img src="images/voiture-2.jpg" alt="Berline Élégante" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Berline'">
+                        <span class="car-card__badge">Berline</span>
+                    </div>
+                    <div class="car-card__body">
+                        <h3 class="car-card__title">Berline Confort Plus</h3>
+                        <p class="car-card__desc">L'élégance au service du confort de conduite.</p>
+                        <div class="car-card__specs">
+                            <span>🛣️ 250 km/h</span>
+                            <span>⚡ 0-100 en 5.8s</span>
+                            <span>🔧 280 ch</span>
+                        </div>
+                        <div class="car-card__footer">
+                            <span class="car-card__price">55 000 €</span>
+                            <button class="btn btn--small">Détails</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VOITURE 3 -->
+                <article class="car-card" data-category="suv">
+                    <div class="car-card__image">
+                        <img src="images/voiture-3.jpg" alt="SUV Familial" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=SUV'">
+                        <span class="car-card__badge">SUV</span>
+                    </div>
+                    <div class="car-card__body">
+                        <h3 class="car-card__title">SUV Aventure</h3>
+                        <p class="car-card__desc">L'espace et la puissance pour toutes vos aventures.</p>
+                        <div class="car-card__specs">
+                            <span>🛣️ 220 km/h</span>
+                            <span>⚡ 0-100 en 6.5s</span>
+                            <span>🔧 350 ch</span>
+                        </div>
+                        <div class="car-card__footer">
+                            <span class="car-card__price">72 000 €</span>
+                            <button class="btn btn--small">Détails</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VOITURE 4 -->
+                <article class="car-card" data-category="electrique">
+                    <div class="car-card__image">
+                        <img src="images/voiture-4.jpg" alt="Voiture Électrique" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Electrique'">
+                        <span class="car-card__badge">Électrique</span>
+                    </div>
+                    <div class="car-card__body">
+                        <h3 class="car-card__title">EV Futur</h3>
+                        <p class="car-card__desc">L'avenir de la mobilité, silencieux et performant.</p>
+                        <div class="car-card__specs">
+                            <span>🔋 600 km</span>
+                            <span>⚡ 0-100 en 4.1s</span>
+                            <span>🔧 400 ch</span>
+                        </div>
+                        <div class="car-card__footer">
+                            <span class="car-card__price">78 000 €</span>
+                            <button class="btn btn--small">Détails</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VOITURE 5 -->
+                <article class="car-card" data-category="sport">
+                    <div class="car-card__image">
+                        <img src="images/voiture-5.jpg" alt="Coupé Sport" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Coupe+Sport'">
+                        <span class="car-card__badge">Sport</span>
+                    </div>
+                    <div class="car-card__body">
+                        <h3 class="car-card__title">Coupé Édition Limitée</h3>
+                        <p class="car-card__desc">Une édition rare pour les passionnés d'exception.</p>
+                        <div class="car-card__specs">
+                            <span>🏁 340 km/h</span>
+                            <span>⚡ 0-100 en 2.9s</span>
+                            <span>🔧 620 ch</span>
+                        </div>
+                        <div class="car-card__footer">
+                            <span class="car-card__price">125 000 €</span>
+                            <button class="btn btn--small">Détails</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- VOITURE 6 -->
+                <article class="car-card" data-category="berline">
+                    <div class="car-card__image">
+                        <img src="images/voiture-6.jpg" alt="Berline Prestige" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Prestige'">
+                        <span class="car-card__badge">Berline</span>
+                    </div>
+                    <div class="car-card__body">
+                        <h3 class="car-card__title">Berline Prestige</h3>
+                        <p class="car-card__desc">Le raffinement à l'état pur pour une expérience unique.</p>
+                        <div class="car-card__specs">
+                            <span>🛣️ 260 km/h</span>
+                            <span>⚡ 0-100 en 5.2s</span>
+                            <span>🔧 320 ch</span>
+                        </div>
+                        <div class="car-card__footer">
+                            <span class="car-card__price">68 000 €</span>
+                            <button class="btn btn--small">Détails</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="about" id="apropos">
+        <div class="container about__content">
+            <div class="about__text">
+                <h2 class="section__title">À propos de nous</h2>
+                <p>
+                    AutoVitrine est né d'une passion pour l'automobile d'exception. 
+                    Depuis notre création, nous sélectionnons avec exigence chaque véhicule 
+                    de notre collection.
+                </p>
+                <p>
+                    Notre équipe d'experts vous accompagne à chaque étape, de la découverte 
+                    à l'acquisition, pour une expérience unique et personnalisée.
+                </p>
+                <div class="about__stats">
+                    <div class="stat">
+                        <span class="stat__number">500+</span>
+                        <span class="stat__label">Véhicules vendus</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">15</span>
+                        <span class="stat__label">Années d'expertise</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__number">98%</span>
+                        <span class="stat__label">Clients satisfaits</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about__image">
+                <img src="images/about.jpg" alt="Notre équipe" onerror="this.src='https://placehold.co/600x500/1e3a8a/ffffff?text=Notre+Equipe'">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Contactez-nous</h2>
+                <p class="section__subtitle">Une question ? Nous sommes à votre écoute</p>
+            </div>
+            
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer__content">
+            <div class="footer__section">
+                <h3 class="footer__logo">AutoVitrine</h3>
+                <p>Votre partenaire pour l'automobile d'exception.</p>
+            </div>
+            <div class="footer__section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h4>Contact</h4>
+                <p>📍 Paris, France</p>
+                <p>📞 +33 1 23 45 67 89</p>
+                <p>✉️ contact@autovitrine.fr</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 AutoVitrine. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
