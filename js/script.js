@@ -62,16 +62,21 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Récupération des données du formulaire
         const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
         
-        // Ici, tu peux :
-        // 1. Envoyer les données via un service comme Formspree, Netlify Forms, EmailJS
-        // 2. Afficher un message de succès
-        
-        alert('Merci pour votre message ! Nous vous répondrons rapidement.');
-        contactForm.reset();
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            alert('✅ Merci pour votre message ! Nous vous répondrons rapidement.');
+            contactForm.reset();
+        })
+        .catch((error) => {
+            alert('❌ Erreur lors de l\'envoi. Veuillez réessayer.');
+            console.error(error);
+        });
     });
 }
 
