@@ -240,7 +240,11 @@
                 <p class="section__subtitle">Une question ? Nous sommes à votre écoute</p>
             </div>
             
-            <form class="contact-form" id="contact-form">
+            <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden" style="display:none;">
+        <label>Ne remplis pas ce champ : <input name="bot-field"></label>
+    </p>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Nom complet</label>
