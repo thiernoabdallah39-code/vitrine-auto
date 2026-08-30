@@ -352,3 +352,16 @@ body.modal-open { overflow: hidden; }
     .filters { gap: 0.5rem; }
     .filter-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
 }
+/* ============================================
+   MASQUER LE BADGE "POWERED BY NETLIFY"
+   ============================================ */
+.netlify-badge,
+[class*="netlify"][class*="badge"],
+a[href*="netlify.com"][class*="badge"],
+div[class*="poweredBy"],
+div[data-netlify-badge] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
