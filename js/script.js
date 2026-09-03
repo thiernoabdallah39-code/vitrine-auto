@@ -127,7 +127,7 @@ const carsData = {
         badge: 'Sport',
         title: 'Toyota Yaris',
         price: '7 500 €',
-        description: 'Une voiture adaptée aux routes guinéenne,
+        description: 'Une voiture adaptée aux routes guinéenne'
         specs: {
             'Marque': 'Toyota ',
             'Année': '2020',
