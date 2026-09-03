@@ -118,7 +118,12 @@ carCards.forEach((card, index) => {
 // 🎯 DONNÉES DES VOITURES - Modifie ici pour personnaliser
 const carsData = {
     voiture1: {
-        image: 'images/voiture-1.jpg',
+        images: [
+    'images/voiture-1-a.jpg',
+    'images/voiture-1-b.jpg',
+    'images/voiture-1-c.jpg',
+    'images/voiture-1-d.jpg'
+],
         badge: 'Sport',
         title: 'Modèle Sport Racing',
         price: '85 000 €',
@@ -306,23 +311,75 @@ const carsData = {
 };
 
 // Fonction pour ouvrir la modal
+// Variables globales pour le carrousel modal
+let currentModalImages = [];
+let currentModalImageIndex = 0;
+
 function openCarModal(carId) {
     const car = carsData[carId];
     if (!car) return;
     
     const modal = document.getElementById('carModal');
-    const modalImage = document.getElementById('modalImage');
     
-    modalImage.src = car.image;
-    modalImage.alt = car.title;
-    modalImage.onerror = function() {
-        this.src = 'https://placehold.co/900x500/1e3a8a/ffffff?text=' + encodeURIComponent(car.title);
-    };
+    // Charger les images du carrousel modal
+    currentModalImages = car.images || [car.image];
+    currentModalImageIndex = 0;
+    
+    const carouselContainer = document.getElementById('modalCarousel');
+    carouselContainer.innerHTML = '';
+    
+    currentModalImages.forEach((imgSrc, index) => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = car.title + ' - Vue ' + (index + 1);
+        if (index === 0) img.classList.add('active');
+        img.onerror = function() {
+            this.src = 'https://placehold.co/900x500/1e3a8a/ffffff?text=' + encodeURIComponent(car.title);
+        };
+        carouselContainer.appendChild(img);
+    });
+    
+    // Créer les miniatures
+    const thumbnailsContainer = document.getElementById('modalThumbnails');
+    thumbnailsContainer.innerHTML = '';
+    
+    if (currentModalImages.length > 1) {
+        currentModalImages.forEach((imgSrc, index) => {
+            const thumb = document.createElement('img');
+            thumb.src = imgSrc;
+            thumb.classList.add('modal-thumbnail');
+            if (index === 0) thumb.classList.add('active');
+            thumb.onclick = () => goToModalImage(index);
+            thumb.onerror = function() {
+                this.src = 'https://placehold.co/60x40/1e3a8a/ffffff?text=' + (index + 1);
+            };
+            thumbnailsContainer.appendChild(thumb);
+        });
+    }
+    
+    // Afficher/masquer les flèches selon le nombre d'images
+    const prevBtn = document.querySelector('.modal-arrow--prev');
+    const nextBtn = document.querySelector('.modal-arrow--next');
+    const counter = document.getElementById('modalCounter');
+    
+    if (currentModalImages.length > 1) {
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+        counter.style.display = 'block';
+        updateModalCounter();
+    } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+        counter.style.display = 'none';
+    }
+    
+    // Remplir les infos
     document.getElementById('modalBadge').textContent = car.badge;
     document.getElementById('modalTitle').textContent = car.title;
     document.getElementById('modalPrice').textContent = car.price;
     document.getElementById('modalDesc').textContent = car.description;
     
+    // Remplir les specs
     const specsContainer = document.getElementById('modalSpecs');
     specsContainer.innerHTML = '';
     for (const [label, value] of Object.entries(car.specs)) {
@@ -334,6 +391,7 @@ function openCarModal(carId) {
         `;
     }
     
+    // Remplir les équipements
     const featuresContainer = document.getElementById('modalFeatures');
     featuresContainer.innerHTML = '';
     car.features.forEach(feature => {
@@ -344,6 +402,55 @@ function openCarModal(carId) {
     modal.classList.add('active');
     document.body.classList.add('modal-open');
 }
+
+// Fonction pour aller à une image précise
+function goToModalImage(index) {
+    const images = document.querySelectorAll('#modalCarousel img');
+    const thumbnails = document.querySelectorAll('.modal-thumbnail');
+    
+    images[currentModalImageIndex].classList.remove('active');
+    if (thumbnails[currentModalImageIndex]) {
+        thumbnails[currentModalImageIndex].classList.remove('active');
+    }
+    
+    currentModalImageIndex = index;
+    
+    images[currentModalImageIndex].classList.add('active');
+    if (thumbnails[currentModalImageIndex]) {
+        thumbnails[currentModalImageIndex].classList.add('active');
+    }
+    
+    updateModalCounter();
+}
+
+// Image précédente
+function prevModalImage() {
+    const newIndex = (currentModalImageIndex - 1 + currentModalImages.length) % currentModalImages.length;
+    goToModalImage(newIndex);
+}
+
+// Image suivante
+function nextModalImage() {
+    const newIndex = (currentModalImageIndex + 1) % currentModalImages.length;
+    goToModalImage(newIndex);
+}
+
+// Mettre à jour le compteur (1/4)
+function updateModalCounter() {
+    const counter = document.getElementById('modalCounter');
+    if (counter) {
+        counter.textContent = `${currentModalImageIndex + 1} / ${currentModalImages.length}`;
+    }
+}
+
+// Navigation clavier dans la modal (flèches gauche/droite)
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('carModal');
+    if (modal && modal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft') prevModalImage();
+        if (e.key === 'ArrowRight') nextModalImage();
+    }
+});
 
 // Fonction pour fermer la modal
 function closeCarModal() {
