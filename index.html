@@ -205,9 +205,28 @@
             <button class="car-modal__close" onclick="closeCarModal()" aria-label="Fermer">&times;</button>
             
             <div class="car-modal__image">
-                <img id="modalImage" src="" alt="">
-                <span class="car-modal__badge" id="modalBadge"></span>
-            </div>
+    <div class="modal-carousel" id="modalCarousel">
+        <!-- Les images seront insérées automatiquement par JavaScript -->
+    </div>
+    
+    <!-- Flèches de navigation -->
+    <button class="modal-arrow modal-arrow--prev" onclick="prevModalImage()" aria-label="Image précédente">
+        &#10094;
+    </button>
+    <button class="modal-arrow modal-arrow--next" onclick="nextModalImage()" aria-label="Image suivante">
+        &#10095;
+    </button>
+    
+    <!-- Compteur d'images (1/4) -->
+    <span class="modal-counter" id="modalCounter">1 / 4</span>
+    
+    <!-- Miniatures cliquables -->
+    <div class="modal-thumbnails" id="modalThumbnails">
+        <!-- Les miniatures seront insérées par JavaScript -->
+    </div>
+    
+    <span class="car-modal__badge" id="modalBadge"></span>
+</div>
             
             <div class="car-modal__body">
                 <div class="car-modal__header">
