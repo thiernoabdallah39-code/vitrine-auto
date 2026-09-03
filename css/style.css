@@ -445,3 +445,152 @@ div[data-netlify-badge] {
 .car-carousel .car-card__badge {
     z-index: 10;
 }
+/* ============================================
+   CARROUSEL MODAL - Navigation manuelle
+   ============================================ */
+.car-modal__image {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-gray-900);
+}
+
+.modal-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.modal-carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.modal-carousel img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Flèches de navigation */
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--color-gray-900);
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.modal-arrow:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal-arrow--prev {
+    left: 15px;
+}
+
+.modal-arrow--next {
+    right: 15px;
+}
+
+/* Compteur d'images (1/4) */
+.modal-counter {
+    position: absolute;
+    top: 15px;
+    right: 65px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+}
+
+/* Miniatures en bas */
+.modal-thumbnails {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    max-width: 90%;
+    overflow-x: auto;
+}
+
+.modal-thumbnail {
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex-shrink: 0;
+}
+
+.modal-thumbnail:hover {
+    opacity: 0.9;
+}
+
+.modal-thumbnail.active {
+    opacity: 1;
+    border-color: white;
+    transform: scale(1.05);
+}
+
+/* Responsive mobile */
+@media (max-width: 640px) {
+    .modal-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .modal-arrow--prev {
+        left: 8px;
+    }
+    
+    .modal-arrow--next {
+        right: 8px;
+    }
+    
+    .modal-thumbnail {
+        width: 45px;
+        height: 30px;
+    }
+    
+    .modal-counter {
+        top: 10px;
+        right: 55px;
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
