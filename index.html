@@ -64,32 +64,37 @@
                 <button class="filter-btn" data-filter="sport">Sport</button>
                 <button class="filter-btn" data-filter="berline">Berline</button>
                 <button class="filter-btn" data-filter="suv">SUV</button>
-                <button class="filter-btn" data-filter="electrique">Électrique</button>
+                <button class="filter-btn" data-filter="electrique">Pièce Mécaniques</button>
             </div>
 
             <!-- Grille de voitures -->
             <div class="cars-grid">
                 
                 <!-- VOITURE 1 -->
-                <article class="car-card" data-category="sport">
-                    <div class="car-card__image">
-                        <img src="images/voiture-1.jpg" alt="Voiture Sport 1" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Voiture+Sport'">
-                        <span class="car-card__badge">Sport</span>
-                    </div>
-                    <div class="car-card__body">
-                        <h3 class="car-card__title">Modèle Sport Racing</h3>
-                        <p class="car-card__desc">Une machine d'exception alliant puissance et précision.</p>
-                        <div class="car-card__specs">
-                            <span>🏁 320 km/h</span>
-                            <span>⚡ 0-100 en 3.2s</span>
-                            <span>🔧 500 ch</span>
-                        </div>
-                        <div class="car-card__footer">
-                            <span class="car-card__price">85 000 €</span>
-                            <button class="btn btn--small" onclick="openCarModal('voiture1')">Détails</button>
-                        </div>
-                    </div>
-                </article>
+<article class="car-card" data-category="sport">
+    <div class="car-card__image car-carousel" data-carousel>
+        <img src="images/voiture-1-a.jpg" alt="Toyota Yaris - Vue 1" class="carousel-img active" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Toyota+Yaris'">
+        <img src="images/voiture-1-b.jpg" alt="Toyota Yaris - Vue 2" class="carousel-img" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Toyota+Yaris'">
+        <img src="images/voiture-1-c.jpg" alt="Toyota Yaris - Vue 3" class="carousel-img" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Toyota+Yaris'">
+        <img src="images/voiture-1-d.jpg" alt="Toyota Yaris - Vue 4" class="carousel-img" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Toyota+Yaris'">
+        <img src="images/voiture-1-e.jpg" alt="Toyota Yaris - Vue 5" class="carousel-img" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Toyota+Yaris'">
+        <span class="car-card__badge">Sport</span>
+        <div class="carousel-dots"></div>
+    </div>
+    <div class="car-card__body">
+        <h3 class="car-card__title">Toyota Yaris</h3>
+        <p class="car-card__desc">Une citadine fiable, économique et parfaite pour la ville.</p>
+        <div class="car-card__specs">
+            <span>🏁 175 km/h</span>
+            <span>⚡ 0-100 en 11s</span>
+            <span>🔧 100 ch</span>
+        </div>
+        <div class="car-card__footer">
+            <span class="car-card__price">12 500 €</span>
+            <button class="btn btn--small" onclick="openCarModal('voiture1')">Détails</button>
+        </div>
+    </div>
+</article>
 
                 <!-- VOITURE 2 -->
                 <article class="car-card" data-category="berline">
@@ -111,94 +116,6 @@
                         </div>
                     </div>
                 </article>
-
-                <!-- VOITURE 3 -->
-                <article class="car-card" data-category="suv">
-                    <div class="car-card__image">
-                        <img src="images/voiture-3.jpg" alt="SUV Familial" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=SUV'">
-                        <span class="car-card__badge">SUV</span>
-                    </div>
-                    <div class="car-card__body">
-                        <h3 class="car-card__title">SUV Aventure</h3>
-                        <p class="car-card__desc">L'espace et la puissance pour toutes vos aventures.</p>
-                        <div class="car-card__specs">
-                            <span>🛣️ 220 km/h</span>
-                            <span>⚡ 0-100 en 6.5s</span>
-                            <span>🔧 350 ch</span>
-                        </div>
-                        <div class="car-card__footer">
-                            <span class="car-card__price">72 000 €</span>
-                            <button class="btn btn--small" onclick="openCarModal('voiture3')">Détails</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- VOITURE 4 -->
-                <article class="car-card" data-category="electrique">
-                    <div class="car-card__image">
-                        <img src="images/voiture-4.jpg" alt="Voiture Électrique" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Electrique'">
-                        <span class="car-card__badge">Électrique</span>
-                    </div>
-                    <div class="car-card__body">
-                        <h3 class="car-card__title">EV Futur</h3>
-                        <p class="car-card__desc">L'avenir de la mobilité, silencieux et performant.</p>
-                        <div class="car-card__specs">
-                            <span>🔋 600 km</span>
-                            <span>⚡ 0-100 en 4.1s</span>
-                            <span>🔧 400 ch</span>
-                        </div>
-                        <div class="car-card__footer">
-                            <span class="car-card__price">78 000 €</span>
-                            <button class="btn btn--small" onclick="openCarModal('voiture4')">Détails</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- VOITURE 5 -->
-                <article class="car-card" data-category="sport">
-                    <div class="car-card__image">
-                        <img src="images/voiture-5.jpg" alt="Coupé Sport" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Coupe+Sport'">
-                        <span class="car-card__badge">Sport</span>
-                    </div>
-                    <div class="car-card__body">
-                        <h3 class="car-card__title">Coupé Édition Limitée</h3>
-                        <p class="car-card__desc">Une édition rare pour les passionnés d'exception.</p>
-                        <div class="car-card__specs">
-                            <span>🏁 340 km/h</span>
-                            <span>⚡ 0-100 en 2.9s</span>
-                            <span>🔧 620 ch</span>
-                        </div>
-                        <div class="car-card__footer">
-                            <span class="car-card__price">125 000 €</span>
-                            <button class="btn btn--small" onclick="openCarModal('voiture5')">Détails</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- VOITURE 6 -->
-                <article class="car-card" data-category="berline">
-                    <div class="car-card__image">
-                        <img src="images/voiture-6.jpg" alt="Berline Prestige" onerror="this.src='https://placehold.co/600x400/1e3a8a/ffffff?text=Prestige'">
-                        <span class="car-card__badge">Berline</span>
-                    </div>
-                    <div class="car-card__body">
-                        <h3 class="car-card__title">Berline Prestige</h3>
-                        <p class="car-card__desc">Le raffinement à l'état pur pour une expérience unique.</p>
-                        <div class="car-card__specs">
-                            <span>🛣️ 260 km/h</span>
-                            <span>⚡ 0-100 en 5.2s</span>
-                            <span>🔧 320 ch</span>
-                        </div>
-                        <div class="car-card__footer">
-                            <span class="car-card__price">68 000 €</span>
-                            <button class="btn btn--small" onclick="openCarModal('voiture6')">Détails</button>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
 
     <!-- ============ À PROPOS ============ -->
     <section class="about" id="apropos">
