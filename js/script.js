@@ -374,3 +374,64 @@ function prefillContact() {
         messageInput.value = `Bonjour,\n\nJe suis intéressé(e) par le véhicule "${carName}".\nPouvez-vous me donner plus d'informations ?\n\nMerci d'avance.`;
     }
 }
+// ============================================
+// CARROUSEL AUTOMATIQUE (défilement toutes les 3 sec)
+// ============================================
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const images = carousel.querySelectorAll('.carousel-img');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    
+    if (images.length <= 1) return; // Pas de carrousel si 1 seule image
+    
+    let currentIndex = 0;
+    
+    // Créer les petits points de navigation
+    images.forEach((img, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Image ${index + 1}`);
+        
+        // Cliquer sur un point → affiche cette image
+        dot.addEventListener('click', () => {
+            goToImage(index);
+            resetInterval();
+        });
+        
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    
+    // Fonction pour aller à une image précise
+    function goToImage(index) {
+        images[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+        
+        currentIndex = index;
+        
+        images[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+    }
+    
+    // Fonction pour passer à l'image suivante
+    function nextImage() {
+        const newIndex = (currentIndex + 1) % images.length;
+        goToImage(newIndex);
+    }
+    
+    // Démarrer le défilement automatique
+    let intervalId = setInterval(nextImage, 3000);
+    
+    // Réinitialiser le timer quand on clique sur un point
+    function resetInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(nextImage, 3000);
+    }
+    
+    // Pause quand la souris survole (bonus UX)
+    carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
+    carousel.addEventListener('mouseleave', () => {
+        intervalId = setInterval(nextImage, 3000);
+    });
+});
