@@ -129,18 +129,17 @@ const carsData = {
         price: '85 000 €',
         description: 'Une machine d\'exception alliant puissance brute et précision chirurgicale. Ce modèle sport racing représente l\'excellence de l\'ingénierie automobile moderne, conçu pour les passionnés de sensations fortes.',
         specs: {
-            'Marque': 'Sport GT',
-            'Année': '2024',
+            'Marque': 'Toyota ',
+            'Année': '2020',
             'Kilométrage': '5 000 km',
             'Motorisation': 'V8 Bi-Turbo',
-            'Puissance': '500 ch',
-            'Transmission': 'Automatique 8 rapports',
+            'Puissance': '116ch',
+            'Transmission': 'Automatique',
             'Vitesse max': '320 km/h',
             '0 à 100 km/h': '3.2 secondes',
             'Consommation': '11 L/100km',
-            'Émissions CO₂': '250 g/km',
-            'Couleur': 'Rouge métallisé',
-            'Places': '2 places'
+            'Couleur': 'Grise foncée',
+            'Places': '5 places assise'
         },
         features: [
             'Sièges baquets en cuir',
@@ -153,161 +152,6 @@ const carsData = {
             'Régulateur adaptatif'
         ]
     },
-    voiture2: {
-        image: 'images/Voiture-12.jpg',
-        badge: 'Berline',
-        title: 'Berline Confort Plus',
-        price: '55 000 €',
-        description: 'L\'élégance au service du confort de conduite. Cette berline allie raffinement et technologie de pointe pour offrir une expérience de conduite exceptionnelle au quotidien.',
-        specs: {
-            'Marque': 'Elegance',
-            'Année': '2024',
-            'Kilométrage': '12 000 km',
-            'Motorisation': '2.0L Turbo',
-            'Puissance': '280 ch',
-            'Transmission': 'Automatique 7 rapports',
-            'Vitesse max': '250 km/h',
-            '0 à 100 km/h': '5.8 secondes',
-            'Consommation': '7 L/100km',
-            'Émissions CO₂': '160 g/km',
-            'Couleur': 'Gris anthracite',
-            'Places': '5 places'
-        },
-        features: [
-            'Intérieur cuir Nappa',
-            'Climatisation 4 zones',
-            'Système multimédia 12"',
-            'Sièges chauffants et ventilés',
-            'Toit ouvrant',
-            'Caméra 360°',
-            'Régulateur adaptatif',
-            'Aide au stationnement'
-        ]
-    },
-    voiture3: {
-        image: 'images/voiture-3.jpg',
-        badge: 'SUV',
-        title: 'SUV Aventure',
-        price: '72 000 €',
-        description: 'L\'espace et la puissance pour toutes vos aventures. Ce SUV combine polyvalence, sécurité et confort pour une conduite sereine sur tous les terrains.',
-        specs: {
-            'Marque': 'Explorer',
-            'Année': '2024',
-            'Kilométrage': '8 500 km',
-            'Motorisation': '3.0L V6 Diesel',
-            'Puissance': '350 ch',
-            'Transmission': 'Automatique 8 rapports',
-            'Vitesse max': '220 km/h',
-            '0 à 100 km/h': '6.5 secondes',
-            'Consommation': '8.5 L/100km',
-            'Émissions CO₂': '195 g/km',
-            'Couleur': 'Noir profond',
-            'Places': '7 places'
-        },
-        features: [
-            '4x4 intégral',
-            'Sièges 3 rangées',
-            'Toit panoramique',
-            'Système audio Harman Kardon',
-            'Aide à la conduite',
-            'Attelage remorque',
-            'Modes tout-terrain',
-            'Coffre modulable'
-        ]
-    },
-    voiture4: {
-        image: 'images/voiture-4.jpg',
-        badge: 'Électrique',
-        title: 'EV Futur',
-        price: '78 000 €',
-        description: 'L\'avenir de la mobilité, silencieux et performant. Cette électrique offre une autonomie exceptionnelle et une technologie de pointe pour une conduite propre et efficiente.',
-        specs: {
-            'Marque': 'Volt',
-            'Année': '2024',
-            'Kilométrage': '3 000 km',
-            'Motorisation': 'Électrique double moteur',
-            'Puissance': '400 ch',
-            'Transmission': 'Automatique',
-            'Autonomie': '600 km',
-            '0 à 100 km/h': '4.1 secondes',
-            'Recharge rapide': '30 min (10-80%)',
-            'Émissions CO₂': '0 g/km',
-            'Couleur': 'Blanc perle',
-            'Places': '5 places'
-        },
-        features: [
-            'Conduite autonome niveau 2',
-            'Écran central 15"',
-            'Recharge rapide DC',
-            'Toit vitré panoramique',
-            'Sièges chauffants',
-            'Système audio premium',
-            'Mise à jour OTA',
-            'Application mobile'
-        ]
-    },
-    voiture5: {
-        image: 'images/voiture-5.jpg',
-        badge: 'Sport',
-        title: 'Coupé Édition Limitée',
-        price: '125 000 €',
-        description: 'Une édition rare pour les passionnés d\'exception. Ce coupé sportif incarne l\'excellence artisanale et la puissance à l\'état pur, dans une production limitée à 500 exemplaires.',
-        specs: {
-            'Marque': 'Sport GT',
-            'Année': '2024',
-            'Kilométrage': '1 200 km',
-            'Motorisation': 'V12 atmosphérique',
-            'Puissance': '620 ch',
-            'Transmission': 'Séquentielle 7 rapports',
-            'Vitesse max': '340 km/h',
-            '0 à 100 km/h': '2.9 secondes',
-            'Consommation': '13 L/100km',
-            'Émissions CO₂': '280 g/km',
-            'Couleur': 'Bleu Sirius',
-            'Places': '2 places'
-        },
-        features: [
-            'Édition numérotée (série 500)',
-            'Sièges carbone Sparco',
-            'Volant Alcantara',
-            'Échappement titanium',
-            'Freins carbone-céramique',
-            'Suspension pilotée',
-            'Mode circuit',
-            'Certificat d\'authenticité'
-        ]
-    },
-    voiture6: {
-        image: 'images/voiture-6.jpg',
-        badge: 'Berline',
-        title: 'Berline Prestige',
-        price: '68 000 €',
-        description: 'Le raffinement à l\'état pur pour une expérience unique. Cette berline prestige allie élégance intemporelle, technologie avancée et confort absolu pour redéfinir la mobilité de luxe.',
-        specs: {
-            'Marque': 'Prestige',
-            'Année': '2024',
-            'Kilométrage': '10 000 km',
-            'Motorisation': '3.0L 6 cylindres',
-            'Puissance': '320 ch',
-            'Transmission': 'Automatique 9 rapports',
-            'Vitesse max': '260 km/h',
-            '0 à 100 km/h': '5.2 secondes',
-            'Consommation': '7.5 L/100km',
-            'Émissions CO₂': '175 g/km',
-            'Couleur': 'Noir obsidienne',
-            'Places': '5 places'
-        },
-        features: [
-            'Cuir semi-aniline',
-            'Bois précieux',
-            'Système audio Bang & Olufsen',
-            'Massage 8 programmes',
-            'Éclairage d\'ambiance',
-            'Toit ouvrant électrique',
-            'Aide à la conduite premium',
-            'Concierge digital 24/7'
-        ]
-    }
 };
 
 // Fonction pour ouvrir la modal
