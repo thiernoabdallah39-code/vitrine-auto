@@ -125,9 +125,9 @@ const carsData = {
     'images/voiture-1-d.jpg'
 ],
         badge: 'Sport',
-        title: 'Toyota Yaris',
-        price: '7 500 €',
-        description: 'Une voiture adaptée aux routes guinéenne'
+        title: 'Modèle Sport Racing',
+        price: '85 000 €',
+        description: 'Une machine d\'exception alliant puissance brute et précision chirurgicale. Ce modèle sport racing représente l\'excellence de l\'ingénierie automobile moderne, conçu pour les passionnés de sensations fortes.',
         specs: {
             'Marque': 'Toyota ',
             'Année': '2020',
@@ -137,7 +137,7 @@ const carsData = {
             'Transmission': 'Automatique',
             'Vitesse max': '320 km/h',
             '0 à 100 km/h': '3.2 secondes',
-            'Consommation': '7 L/100km',
+            'Consommation': '11 L/100km',
             'Couleur': 'Grise foncée',
             'Places': '5 places assise'
         },
